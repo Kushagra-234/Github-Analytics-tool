@@ -1,15 +1,17 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-const Error = () => {
+import loginImg from "../images/login-img.svg";
+const Login = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <Wrapper>
-      <div>
-        <h1>404</h1>
-        <h3>Sorry, the page you tried cannot be found</h3>
-        <Link to="/" className="btn">
-          Back Home
-        </Link>
+      <div className="container">
+        <img src={loginImg} alt="github user" />
+        <h1>github user</h1>
+        <button className="btn" onClick={loginWithRedirect}>
+          Login / sign up
+        </button>
       </div>
     </Wrapper>
   );
@@ -18,14 +20,16 @@ const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: var(--clr-primary-10);
-  text-align: center;
-  h1 {
-    font-size: 10rem;
+  .container {
+    width: 90vw;
+    max-width: 600px;
+    text-align: center;
   }
-  h3 {
-    color: var(--clr-grey-3);
+  img {
+    margin-bottom: 2rem;
+  }
+  h1 {
     margin-bottom: 1.5rem;
   }
 `;
-export default Error;
+export default Login;
