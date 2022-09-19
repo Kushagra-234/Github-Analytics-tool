@@ -11,11 +11,11 @@ const GithubContext = React.createContext();
 // Provider, Consumer - GithubContext.Provider
 
 const GithubProvider = ({ children }) => {
-  const [githubUser, setGithubUser] = useState(0);
-  const [repos, setRepos] = useState(0);
-  const [followers, setFollowers] = useState(0);
+  const [githubUser, setGithubUser] = useState(undefined);
+  const [repos, setRepos] = useState([]);
+  const [followers, setFollowers] = useState([]);
   // requests loading
-  const [requests, setRequests] = useState(0);
+  const [requests, setRequests] = useState();
   const [isLoading, setIsLoading] = useState(false);
   // errors
   const [error, setError] = useState({ show: false, msg: "" });
@@ -41,6 +41,7 @@ const GithubProvider = ({ children }) => {
             setRepos(repos.value.data);
           }
           if (followers.status === status) {
+            console.log(followers.value.data);
             setFollowers(followers.value.data);
           }
         })
@@ -54,6 +55,7 @@ const GithubProvider = ({ children }) => {
 
   // check Rate
   const checkRequests = () => {
+    console.log("checkreq");
     axios(`${rootUrl}/rate_limit`)
       .then(({ data }) => {
         let {

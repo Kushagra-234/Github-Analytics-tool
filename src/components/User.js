@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { GithubContext } from "../context/context";
 import Card from "./Card";
 import Followers from "./Followers";
 const User = () => {
+  const { githubUser } = React.useContext(GithubContext);
+
+  if (!githubUser) return null;
   return (
     <section className="section">
       <Wrapper className="section-center">
