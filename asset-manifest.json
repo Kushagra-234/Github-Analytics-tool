@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Github-Analytics-tool/static/css/main.27cc9fee.css",
+    "main.js": "/Github-Analytics-tool/static/js/main.729cf360.js",
+    "static/media/preloader.gif": "/Github-Analytics-tool/static/media/preloader.1d6398d0f0951629af95.gif",
+    "static/media/login-img.svg": "/Github-Analytics-tool/static/media/login-img.45d3b74fbb4ac483314eef377e006a54.svg",
+    "index.html": "/Github-Analytics-tool/index.html",
+    "main.27cc9fee.css.map": "/Github-Analytics-tool/static/css/main.27cc9fee.css.map",
+    "main.729cf360.js.map": "/Github-Analytics-tool/static/js/main.729cf360.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27cc9fee.css",
+    "static/js/main.729cf360.js"
+  ]
+}
