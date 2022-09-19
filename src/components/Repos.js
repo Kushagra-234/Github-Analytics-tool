@@ -6,8 +6,11 @@ const Repos = () => {
   const { repos, githubUser } = React.useContext(GithubContext);
 
   if (!githubUser) return null;
+  
 
   const languages = repos.reduce((total, item) => {
+    // console.log(languages);
+    
     const { language, stargazers_count } = item;
     if (!language) return total;
     if (!total[language]) {
@@ -23,6 +26,7 @@ const Repos = () => {
         stars: total[language].stars + stargazers_count,
       };
     }
+    
 
     return total;
   }, {});
